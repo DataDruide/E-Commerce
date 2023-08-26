@@ -7,7 +7,8 @@ Eintauchen, shoppen, auffallen – jetzt in die Style-Zukunft starten!
 
 ![AppBanner_03](https://github.com/AppNewbie86/E-Commerce/assets/101304191/a54ffdde-3e2f-4dfb-9814-86a69e9dc3e2)
 
-Projektbeschreibung: Einblick in den Entstehungsprozess
+![Projektbeschreibung_ Einblick in den Entstehungsprozess](https://github.com/AppNewbie86/E-Commerce/assets/101304191/11256f6a-6377-4b55-b6d4-80c2d69767c5)
+
 
 In diesem Projekt gewähre ich euch einen detaillierten Einblick in den Entstehungsprozess meiner neuesten Kreation. Von der ersten Idee bis zur finalen Umsetzung nehme ich euch mit auf eine Reise durch die verschiedenen Schritte, die zur Realisierung dieses Projekts geführt haben.
 
