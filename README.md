@@ -1,5 +1,5 @@
 # E-Commerce
-![MY FASHION APP](https://github.com/AppNewbie86/E-Commerce/assets/101304191/3fba59ce-465c-4bb4-bdcc-a16d7b273881)
+![MY FASHION APP](https://github.com/AppNewbie86/E-Commerce/assets/101304191/ab73b0d7-c524-4a9d-87c1-bf7673c24ec9)
 
 Entdecke deine Fashion-Passion mit Wardrobe! Dein persönlicher Laufsteg für trendige Kleidung und Schuhe, 
 die deinen Stil perfekt treffen. Stöbere, inspiriere und definiere Mode neu. 
