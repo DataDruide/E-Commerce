@@ -11,7 +11,8 @@ Projektbeschreibung: Einblick in den Entstehungsprozess
 
 In diesem Projekt gewähre ich euch einen detaillierten Einblick in den Entstehungsprozess meiner neuesten Kreation. Von der ersten Idee bis zur finalen Umsetzung nehme ich euch mit auf eine Reise durch die verschiedenen Schritte, die zur Realisierung dieses Projekts geführt haben.
 
-Herangehensweise:
+![Herangehensweise](https://github.com/AppNewbie86/E-Commerce/assets/101304191/a23d4d31-512f-4356-a78f-fd3c5059c496)
+
 
 Ideenfindung und Konzeptualisierung: Alles beginnt mit einer Idee. Ich erkläre, wie ich auf die Idee zu diesem Projekt gekommen bin, welche Inspirationen dahinterstecken und wie ich die groben Konzepte skizziert habe.
 
