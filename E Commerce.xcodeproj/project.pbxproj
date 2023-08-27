@@ -89,6 +89,15 @@
 		E7FCB3E52A9B5981003E386B /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCB3E42A9B5981003E386B /* ProductDetail.swift */; };
 		E7FCB3E72A9B59DA003E386B /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCB3E62A9B59DA003E386B /* ProductViewModel.swift */; };
 		E7FCB3E92A9B5A01003E386B /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCB3E82A9B5A01003E386B /* ApiService.swift */; };
+		E7FCB3EC2A9B66F1003E386B /* VideoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCB3EB2A9B66F1003E386B /* VideoListItem.swift */; };
+		E7FCB3F12A9B7134003E386B /* videos.json in Resources */ = {isa = PBXBuildFile; fileRef = E7FCB3F02A9B7134003E386B /* videos.json */; };
+		E7FCB3F32A9B7397003E386B /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCB3F22A9B7397003E386B /* VideoModel.swift */; };
+		E7FCB3F62A9BB2B5003E386B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCB3F52A9BB2B5003E386B /* Video.swift */; };
+		E7FCB3F82A9BBA2F003E386B /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCB3F72A9BBA2F003E386B /* VideoListView.swift */; };
+		E7FCB3FA2A9BCAAB003E386B /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCB3F92A9BCAAB003E386B /* VideoPlayerView.swift */; };
+		E7FCB3FD2A9BCCF7003E386B /* VideoPlayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCB3FC2A9BCCF7003E386B /* VideoPlayerHelper.swift */; };
+		E7FCB4072A9BE2A0003E386B /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = E7FCB4062A9BE2A0003E386B /* URLImage */; };
+		E7FCB4092A9BE2A0003E386B /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = E7FCB4082A9BE2A0003E386B /* URLImageStore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +187,14 @@
 		E7FCB3E42A9B5981003E386B /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		E7FCB3E62A9B59DA003E386B /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		E7FCB3E82A9B5A01003E386B /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		E7FCB3EB2A9B66F1003E386B /* VideoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListItem.swift; sourceTree = "<group>"; };
+		E7FCB3F02A9B7134003E386B /* videos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videos.json; sourceTree = "<group>"; };
+		E7FCB3F22A9B7397003E386B /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		E7FCB3F42A9BB092003E386B /* E-Commerce-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "E-Commerce-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E7FCB3F52A9BB2B5003E386B /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		E7FCB3F72A9BBA2F003E386B /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
+		E7FCB3F92A9BCAAB003E386B /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		E7FCB3FC2A9BCCF7003E386B /* VideoPlayerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +206,7 @@
 				E77627602A94295F008F8B82 /* FirebaseAnalyticsSwift in Frameworks */,
 				E77627762A94295F008F8B82 /* FirebaseMessaging in Frameworks */,
 				E77627662A94295F008F8B82 /* FirebaseAuthCombine-Community in Frameworks */,
+				E7FCB4092A9BE2A0003E386B /* URLImageStore in Frameworks */,
 				E776276E2A94295F008F8B82 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				E77627642A94295F008F8B82 /* FirebaseAuth in Frameworks */,
 				E77627702A94295F008F8B82 /* FirebaseFirestoreSwift in Frameworks */,
@@ -201,6 +219,7 @@
 				E77627682A94295F008F8B82 /* FirebaseDatabase in Frameworks */,
 				E77627622A94295F008F8B82 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				E77627722A94295F008F8B82 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				E7FCB4072A9BE2A0003E386B /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +264,9 @@
 		E776271B2A941D80008F8B82 /* E Commerce */ = {
 			isa = PBXGroup;
 			children = (
+				E7FCB3FE2A9BD9AB003E386B /* MediaDaten */,
+				E7FCB3FB2A9BCCD7003E386B /* Helper */,
+				E7FCB3F42A9BB092003E386B /* E-Commerce-Info.plist */,
 				E7FCB3942A9AAC68003E386B /* JSONS */,
 				E7FCB38D2A9AA6D9003E386B /* Extensions */,
 				E7FCB38A2A9A9F6A003E386B /* ViewController */,
@@ -287,6 +309,7 @@
 		E77627482A942104008F8B82 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7FCB3EA2A9B66DC003E386B /* HelpVideos */,
 				E7AC696B2A98D6F800EA63E0 /* Payment */,
 				E77A24E22A979B0200BE725F /* TrackingOrder */,
 				E77A24DB2A9788D200BE725F /* Filter */,
@@ -381,6 +404,8 @@
 				E77A24D12A97816600BE725F /* FAQQuestion.swift */,
 				E77A24D32A97818700BE725F /* FAQSection.swift */,
 				E77A24E82A97E53900BE725F /* Order.swift */,
+				E7FCB3F22A9B7397003E386B /* VideoModel.swift */,
+				E7FCB3F52A9BB2B5003E386B /* Video.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -547,6 +572,7 @@
 		E7FCB3942A9AAC68003E386B /* JSONS */ = {
 			isa = PBXGroup;
 			children = (
+				E7FCB3F02A9B7134003E386B /* videos.json */,
 				E7FCB3952A9AAC80003E386B /* category.json */,
 			);
 			path = JSONS;
@@ -558,6 +584,31 @@
 				E7FCB3D62A9AC83B003E386B /* Category.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		E7FCB3EA2A9B66DC003E386B /* HelpVideos */ = {
+			isa = PBXGroup;
+			children = (
+				E7FCB3EB2A9B66F1003E386B /* VideoListItem.swift */,
+				E7FCB3F72A9BBA2F003E386B /* VideoListView.swift */,
+				E7FCB3F92A9BCAAB003E386B /* VideoPlayerView.swift */,
+			);
+			path = HelpVideos;
+			sourceTree = "<group>";
+		};
+		E7FCB3FB2A9BCCD7003E386B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E7FCB3FC2A9BCCF7003E386B /* VideoPlayerHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E7FCB3FE2A9BD9AB003E386B /* MediaDaten */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MediaDaten;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -593,6 +644,8 @@
 				E77627752A94295F008F8B82 /* FirebaseMessaging */,
 				E77627772A94295F008F8B82 /* FirebaseStorage */,
 				E77627792A94295F008F8B82 /* FirebaseStorageCombine-Community */,
+				E7FCB4062A9BE2A0003E386B /* URLImage */,
+				E7FCB4082A9BE2A0003E386B /* URLImageStore */,
 			);
 			productName = "E Commerce";
 			productReference = E77627192A941D80008F8B82 /* E Commerce.app */;
@@ -668,6 +721,7 @@
 			mainGroup = E77627102A941D80008F8B82;
 			packageReferences = (
 				E776275A2A94295F008F8B82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E7FCB4052A9BE2A0003E386B /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = E776271A2A941D80008F8B82 /* Products */;
 			projectDirPath = "";
@@ -689,6 +743,7 @@
 				E77627212A941D81008F8B82 /* Assets.xcassets in Resources */,
 				E776277C2A942C39008F8B82 /* GoogleService-Info.plist in Resources */,
 				E7FCB3962A9AAC80003E386B /* category.json in Resources */,
+				E7FCB3F12A9B7134003E386B /* videos.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +778,7 @@
 				E77627562A942654008F8B82 /* OnboardItem.swift in Sources */,
 				E7FCB3852A9A74CD003E386B /* PaymentButton.swift in Sources */,
 				E77A24E92A97E53900BE725F /* Order.swift in Sources */,
+				E7FCB3FD2A9BCCF7003E386B /* VideoPlayerHelper.swift in Sources */,
 				E7FCB3D72A9AC83B003E386B /* Category.swift in Sources */,
 				E7FCB38C2A9A9F7C003E386B /* UIViewControllerRepresentable.swift in Sources */,
 				E77A24BC2A9587C100BE725F /* SettingView.swift in Sources */,
@@ -731,9 +787,12 @@
 				E7FCB3812A9A7484003E386B /* PaymentSaveButtonShape.swift in Sources */,
 				E7FCB38F2A9AA6FD003E386B /* UIImageView.swift in Sources */,
 				E7FCB3D42A9AC7D1003E386B /* TrousersView.swift in Sources */,
+				E7FCB3F32A9B7397003E386B /* VideoModel.swift in Sources */,
 				E77627522A942396008F8B82 /* LoginView.swift in Sources */,
 				E7FCB3832A9A74A9003E386B /* PaymentBoxShape.swift in Sources */,
+				E7FCB3EC2A9B66F1003E386B /* VideoListItem.swift in Sources */,
 				E77A24AD2A9584C000BE725F /* RecentlyCategoryShowShape.swift in Sources */,
+				E7FCB3F82A9BBA2F003E386B /* VideoListView.swift in Sources */,
 				E77A24E12A9796E800BE725F /* OrderPlacedBanner.swift in Sources */,
 				E77A24E62A97D55000BE725F /* CheckBoxView.swift in Sources */,
 				E77A24C62A96062300BE725F /* ItemDetailsView.swift in Sources */,
@@ -757,7 +816,9 @@
 				E776271D2A941D80008F8B82 /* E_CommerceApp.swift in Sources */,
 				E77A24A62A9571C200BE725F /* CallCenterView.swift in Sources */,
 				E77A24BF2A95881000BE725F /* TermsOfServiceView.swift in Sources */,
+				E7FCB3FA2A9BCAAB003E386B /* VideoPlayerView.swift in Sources */,
 				E776274A2A94212C008F8B82 /* OnBoardingRules.swift in Sources */,
+				E7FCB3F62A9BB2B5003E386B /* Video.swift in Sources */,
 				E7FCB3E52A9B5981003E386B /* ProductDetail.swift in Sources */,
 				E77A24EB2A97E5BE00BE725F /* TrackingOrderViewModel.swift in Sources */,
 				E77A24C22A95885500BE725F /* CreateProfileView.swift in Sources */,
@@ -933,6 +994,7 @@
 				DEVELOPMENT_TEAM = 55C3RLSR2Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "E-Commerce-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -962,6 +1024,7 @@
 				DEVELOPMENT_TEAM = 55C3RLSR2Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "E-Commerce-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1106,6 +1169,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		E7FCB4052A9BE2A0003E386B /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1188,6 +1259,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E776275A2A94295F008F8B82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		E7FCB4062A9BE2A0003E386B /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7FCB4052A9BE2A0003E386B /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		E7FCB4082A9BE2A0003E386B /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7FCB4052A9BE2A0003E386B /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,10 +1,13 @@
 import SwiftUI
 
+
 struct AddCategoryPage: View {
     
     @State private var isSheetPresented = false // Zustand für das Sheet
-
-    var body: some View {
+    @State private var isVideoSheetPresented = false // Zustand für das Sheet
+    
+  @State var videos : [Video] = Bundle.main.decode("videos.json") // Hier machen wir uns die Videos zugänglich
+        var body: some View {
         NavigationView {
             ZStack {
                 Image("Case") // BackroundImage
@@ -18,6 +21,17 @@ struct AddCategoryPage: View {
                     .opacity(0.12)
                 
                 VStack {
+                    // Header with centered text
+                    HStack {
+                        Spacer()
+                        Text("TO THE PRODUCTS")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.primary)
+                        Spacer()
+                    }
+                    .padding()
+                    
                     Image("illustration") // SVG Illustration
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
@@ -29,34 +43,62 @@ struct AddCategoryPage: View {
                         .fontWeight(.bold)
                         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
                         .padding(.bottom, 20)
-                    
+                    Spacer()
                     Button(action: {
                         isSheetPresented.toggle() // Ändert den Zustand des Sheets
                     }) {
-                    Text("Produkte")
+                        Text("PRODUKTE")
                             .font(.headline)
                             .frame(width: 200, height: 50)
-                            .background(Color(red: 0.4, green: 0.03, blue: 0.37))                     .foregroundColor(.white)
+                            .background(Color(red: 0.4, green: 0.03, blue: 0.37))
+                            .foregroundColor(.white)
                             .cornerRadius(10)
                     }
                     .sheet(isPresented: $isSheetPresented) {
-                            ProductView() // Zeigt das Sheet mit der ProductView an
+                        ProductView() // Zeigt das Sheet mit der ProductView an
                     }
                     
-                    .padding()
+                    Button(action: {
+                        isVideoSheetPresented.toggle() // Ändert den Zustand des Sheets
+                    }) {
+                        Text("VIDEOS")
+                            .font(.headline)
+                            .frame(width: 200, height: 50)
+                            .background(Color(red: 0.4, green: 0.03, blue: 0.37))
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                    .sheet(isPresented: $isVideoSheetPresented) {
+                        VideoListItem(video: Video(id: "onlineshopping", name: "Onlineshopping", headline: "A real Shopping Adventuere"))
+                    }
+                }
+                .padding()
+                    
+                    Spacer() // Add some spacing to separate the buttons from the footer
+                    
+                    // Footer
+                    FooterView()
                 }
             }
         }
     }
-    
-    struct AddCategoryPage_Previews: PreviewProvider {
-        static var previews: some View {
-            AddCategoryPage()
-        }
+
+//
+//struct AddCategoryPage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddCategoryPage()
+//    }
+//}
+//
+
+struct FooterView: View {
+    var body: some View {
+        Text("Copyright © 2023 ProductInfoCenter. All rights reserved.")
+            .font(.footnote)
+            .foregroundColor(.gray)
+            .padding()
     }
-    
 }
-    
     
     // Trash
     

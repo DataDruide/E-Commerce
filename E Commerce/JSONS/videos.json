@@ -1,0 +1,32 @@
+[
+  {
+    "id" : "onlineshopping",
+    "name" : "Onlineshopping",
+    "headline" : "When you need Help for OnlineShopping clicked here for Help"
+  },
+  {
+      "id" : "payment",
+      "name" : "Payment",
+      "headline" : "When you need Help for Payment clicked here for Help"
+  },
+  {
+      "id" : "retoure",
+      "name" : "Retoure",
+      "headline" : "When you need Help for Retoure clicked here for Help"
+  },
+  {
+      "id" : "callcenter",
+      "name" : "Callcenter",
+      "headline" : "When you need Help for Callcenter clicked here for Help"
+  },
+  {
+      "id" : "order",
+      "name" : "Order",
+      "headline" : "When you need Help for Order clicked here for Help"
+  },
+  {
+      "id" : "products",
+      "name" : "Products",
+      "headline" : "When you need Help for Products clicked here for Help"
+  }
+]
