@@ -16,7 +16,7 @@ struct SplashView: View {
             ZStack {
                 ZStack {
                     ZStack {
-                        Text("E-RICHTIDE\nALL YOUR CLOTHING\nNEEDS")
+                        Text("WARDROBE\nALL YOUR CLOTHING\nNEEDS")
                             .font(Font.custom("Space Grotesk", size: 34))
                             .kerning(0.25)
                             .multilineTextAlignment(.center)

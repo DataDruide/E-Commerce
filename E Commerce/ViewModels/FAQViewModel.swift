@@ -1,10 +1,12 @@
 
 import SwiftUI
 
-
 @MainActor
 class FAQViewModel: ObservableObject {
+    // Store the sections of FAQs
     @Published var sections: [FAQSection] = [
+        // Sample FAQ sections and questions
+        // Add more sections and questions as needed
         FAQSection(title: "Account und Anmeldung", questions: [
             FAQQuestion(question: "Wie erstelle ich ein Konto?", answer: "Um ein Konto zu erstellen, klicken Sie auf die Schaltfläche 'Registrieren' und geben Sie Ihre Informationen ein."),
             FAQQuestion(question: "Wie melde ich mich ab?", answer: "Klicken Sie auf Ihr Profilbild und wählen Sie 'Abmelden'."),
@@ -22,19 +24,22 @@ class FAQViewModel: ObservableObject {
         ])
     ]
 
+    // Filter and return FAQ sections based on search query
     func filteredQuestions(_ searchQuery: String) -> [FAQSection] {
         if searchQuery.isEmpty {
             return sections
         } else {
             return sections.map { section in
+                // Filter questions within each section
                 let filteredQuestions = section.questions.filter { question in
                     question.question.localizedCaseInsensitiveContains(searchQuery)
                 }
+                // Return a section only if it contains filtered questions
                 return FAQSection(title: section.title, questions: filteredQuestions)
             }.filter { section in
+                // Filter out sections without questions
                 !section.questions.isEmpty
             }
         }
     }
 }
-

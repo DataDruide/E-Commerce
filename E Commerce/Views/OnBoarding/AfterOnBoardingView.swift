@@ -9,6 +9,10 @@ struct AfterOnBoardingView: View {
     
     var body: some View {
         ZStack {
+            Image("Case")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea(.all)
             VStack(spacing: 8) {
                 Spacer()
 //                Text("Richtide")
@@ -19,7 +23,7 @@ struct AfterOnBoardingView: View {
 //                    .fontWeight(.bold)
 //                    .padding()
                 Spacer()
-                Text("E-Richtide\nAll your clothing\nneeds")
+                Text("WARDROBE\nALL YOUR CLOTHING\nNEEDS")
                     .font(Font.custom("Space Grotesk", size: 34))
                     .kerning(0.25)
                     .multilineTextAlignment(.center)
@@ -29,7 +33,7 @@ struct AfterOnBoardingView: View {
                 Button(action: {
                     showLoginView = true
                 }) {
-                    Text("Continue")
+                    Text("CONTINUE")
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 200, height: 50)
@@ -50,9 +54,9 @@ struct AfterOnBoardingView: View {
                 Spacer()
 
             }
-            .padding()
-            .frame(width: 400, height: 900)
-            .background(Color(red: 0.4, green: 0.03, blue: 0.37))                 .cornerRadius(10)
+//            .padding()
+//            .frame(width: 400, height: 900)
+           // .background(Color(red: 0.4, green: 0.03, blue: 0.37))                 .cornerRadius(10)
         }
     }
 }

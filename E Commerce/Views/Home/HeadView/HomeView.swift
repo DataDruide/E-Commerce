@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var isCategoryViewShowing = false
+    @State private var isAddCategoriePageShowing = false
     @State private var isCellCenterViewShowing = false
     @State private var isPresentingSearchView = false
     @State private var isPresentingCreateProfileView = false
     @State private var isPresentingNotificationView = false
     @State private var isPresentingSettingView = false
     @State private var isPresentingHomeView = false
-    @State private var isPresentingCategoryPage = false
+    @State private var isPresentingAddCategoryPage = false
     @State private var isPresentingTrackingOrderView = false
 
     @State private var elapsedTime: TimeInterval = 0
@@ -381,7 +381,7 @@ struct HomeView: View {
                                 .cornerRadius(25)
                                 
                                 Button(action: {
-                                    isCategoryViewShowing = true
+                                    isAddCategoriePageShowing = true
                                     // Handle button action
                                 }) {
                                     ZStack {
@@ -414,7 +414,7 @@ struct HomeView: View {
                 .overlay(
                     HStack(alignment: .center, spacing: 45) {
                         Button(action: {
-                                        isPresentingCategoryPage.toggle()
+                            isPresentingAddCategoryPage.toggle()
                                     }) {
                                         Image(systemName: "house")
                                             .resizable()
@@ -422,8 +422,8 @@ struct HomeView: View {
                                             .foregroundColor(Color(red: 0.4, green: 0.03, blue: 0.37))
                                     }
                                     .tag(0)
-                                    .sheet(isPresented: $isPresentingCategoryPage) {
-                                        CategoryPage()
+                                    .sheet(isPresented: $isPresentingAddCategoryPage) {
+                                        AddCategoryPage()
                                     }
 
                         

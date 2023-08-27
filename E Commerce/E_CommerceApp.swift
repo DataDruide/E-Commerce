@@ -12,13 +12,19 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct AppStorageAppApp: App {
-    @EnvironmentObject var authService : AuthService
+    @EnvironmentObject var authService: AuthService
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
     var body: some Scene {
         WindowGroup {
-            SplashView()
-                .environmentObject(AuthService())
+            NavigationView {
+               
+                
+                SplashView()
+                    .environmentObject(AuthService())
+                   
+            }
         }
     }
 }

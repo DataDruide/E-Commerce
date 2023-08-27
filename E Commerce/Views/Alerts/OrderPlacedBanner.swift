@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct OrderPlacedBanner: View {
-    @State private var isShowingCategoryViewSheet = false
+    @State private var isShowingAddCategoriePageSheet = false
     @State private var isShowingTrackingOrderViewSheet = false
 
     @State private var timeRemaining: TimeInterval = 4 * 24 * 60 * 60 // 4 days in seconds
@@ -20,7 +20,7 @@ struct OrderPlacedBanner: View {
             
             HStack(alignment: .center, spacing: 10) {
                 Button(action: {
-                    isShowingCategoryViewSheet = true
+                    isShowingAddCategoriePageSheet = true
                 }) {
                     Text("Shopping Continoue")
                         .font(
@@ -40,8 +40,8 @@ struct OrderPlacedBanner: View {
                                 .stroke(Color(red: 0.4, green: 0.03, blue: 0.37), lineWidth: 1)
                         )
                 }
-                .sheet(isPresented: $isShowingCategoryViewSheet) {
-                    CategoryPage()
+                .sheet(isPresented: $isShowingAddCategoriePageSheet) {
+                    AddCategoryPage()
                 }
                 
                 Button(action: {

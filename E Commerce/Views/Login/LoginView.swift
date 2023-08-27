@@ -9,11 +9,11 @@ struct LoginView: View {
 
     var body: some View {
         ZStack {
-            Image("setcard-06") // Hier das Bild einfügen
+            Image("setcard-07") // Hier das Bild einfügen
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
-                .opacity(0.9) // Angepasste Opacity für das Bild
+                .opacity(0.8) // Angepasste Opacity für das Bild
                 .contrast(0.7)
                 .offset(x: -70)
             
@@ -21,20 +21,20 @@ struct LoginView: View {
                 
                 
                 Text("Start\nYour Style Journey")
-                    .font(.system(size: 24, weight: .thin, design: .rounded))
-                    .foregroundColor(.black)
+                    .font(.system(size: 40, weight: .thin, design: .rounded))
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.center)
-                    .shadow(color: .gray, radius: 0.5, x: 0.25, y: 0.25)
+                    .shadow(color: .white, radius: 0.5, x: 0.25, y: 0.25)
                 
                 Spacer()
                 
-                Text("Login")
+                Text("LOGIN")
                     .font(.system(size: 56, weight: .semibold))
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                     .blur(radius: 0.5)
-                    .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
-                
+                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
+
                 Spacer()
                 
                 VStack(spacing: 10) {
@@ -47,11 +47,13 @@ struct LoginView: View {
                         .cornerRadius(10)
                         .overlay(
                             RoundedRectangle(cornerRadius: 18)
-                                .stroke(Color.gray, lineWidth: 1)
+                                .stroke(Color.white, lineWidth: 2)
                         )
                         .onAppear {
                             UITextField.appearance().tintColor = .white
                         }
+                        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
+
                     
                     SecureField("Password", text: $password)
                         .padding(.horizontal, 10)
@@ -61,11 +63,13 @@ struct LoginView: View {
                         .cornerRadius(10)
                         .overlay(
                             RoundedRectangle(cornerRadius: 18)
-                                .stroke(Color.gray, lineWidth: 1)
+                                .stroke(Color.white, lineWidth: 2)
                         )
                         .onAppear {
                             UITextField.appearance().tintColor = .white
                         }
+                        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
+
                 }
                 .padding(.horizontal, 20)
                 

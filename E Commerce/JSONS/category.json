@@ -1,0 +1,52 @@
+[
+  {
+    "id" : 1,
+    "name" : "CLOTHING",
+    "image" : "categoryimage-01"
+  },
+  {
+    "id" : 2,
+    "name" : "TROUSERS",
+    "image" : "categoryimage-02"
+  },
+  {
+    "id" : 3,
+    "name" : "SHOES",
+    "image" : "categoryimage-03"
+  },
+  {
+    "id" : 4,
+    "name" : "DRESSES",
+    "image" : "categoryimage-04"
+  },
+  {
+    "id" : 5,
+    "name" : "CHILLOUT PANNIES",
+    "image" : "categoryimage-04"
+  },
+  {
+    "id" : 6,
+    "name" : "CLOTHING",
+    "image" : "categoryimagemen-01"
+  },
+  {
+    "id" : 7,
+    "name" : "DIGGIS",
+    "image" : "categoryimagemen-02"
+  },
+  {
+    "id" : 8,
+    "name" : "SHOES",
+    "image" : "categoryimagemen-03"
+  },
+  {
+    "id" : 9,
+    "name" : "T-SHIRT",
+    "image" : "categoryimagemen-04"
+  },
+  {
+    "id" : 10,
+    "name" : "JEANS JACKET",
+    "image" : "categoryimagemen-04"
+  }
+]

@@ -1,16 +1,20 @@
-
 import SwiftUI
 
 struct SearchView: View {
-  
+    @ObservedObject var productViewModel = ProductViewModel()
+    @State private var searchText = ""
+    @State private var isSearching = false
+
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
             Spacer()
-            SearchHeaderView()
-            // Header
-           
-            
-            // Body
+            SearchHeaderView(searchText: $productViewModel.searchText, isSearching: $isSearching)
+                .onAppear {
+                    // Hier könntest du den API-Aufruf durchführen und die Daten im productViewModel.products speichern
+                }
+            List(productViewModel.products.filter { searchText.isEmpty ? true : $0.title.lowercased().contains(searchText.lowercased()) }) { product in
+                Text(product.title)
+            }
             Spacer()
             Image(systemName: "magnifyingglass.circle.fill")
                 .font(.system(size: 100))
@@ -36,15 +40,6 @@ struct SearchView: View {
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
-            
-           
-
-            
-            // Footer
-            Spacer()
-            Rectangle()
-                .opacity(0)
-                .frame(height: 150)
         }
         .background(Color.white)
         .edgesIgnoringSafeArea(.all)
@@ -59,3 +54,4 @@ struct SearchView_Previews: PreviewProvider {
         SearchView()
     }
 }
+

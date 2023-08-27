@@ -1,20 +1,14 @@
-
 import SwiftUI
+
 struct ItemDetailsView: View {
-    
+    @State private var isLiked = false // Variable zur Speicherung des Zustands
+  
     var body: some View {
         ZStack {
             VStack {
                 Spacer()
                 ItemHeaderDetailsShape()
-                Image("thumbnail")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 320, height: 293)
-                    .clipped()
-                    .cornerRadius(5)
-                    .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
-
+                
                 
                 HStack {
                     Text("Fashionnova Sundress $65")
@@ -25,10 +19,16 @@ struct ItemDetailsView: View {
                         .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
 
                     
-                    Image(systemName: "heart")
-                        .font(Font.system(size: 20))
-                        .foregroundColor(Color(red: 0.4, green: 0.03, blue: 0.37))
-                        .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
+                    Button(action: {
+                                    isLiked.toggle() // Umkehrung des Zustands beim Klicken
+                                }) {
+                                    Image(systemName: "heart")
+                                        .font(Font.system(size: 20))
+                                        .foregroundColor(isLiked ? .red : Color(red: 0.4, green: 0.03, blue: 0.37)) // Wenn geliked, wird rot, sonst Standardfarbe
+                                        .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
+                                }
+                                
+                               
 
                 }
                 .padding(.horizontal, 20)
@@ -103,11 +103,7 @@ struct ItemDetailsView: View {
     }
 }
 
-struct ItemDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ItemDetailsView()
-    }
-}
+
 
 struct ItemDetailsFooterShape: View {
     var body: some View {

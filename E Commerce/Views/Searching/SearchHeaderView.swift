@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct SearchHeaderView: View {
-    @State private var searchText = ""
-    @State private var isSearching = false
-    
+   
+    @Binding var searchText: String
+    @Binding var isSearching: Bool
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(stops: [
@@ -65,11 +65,5 @@ struct SearchHeaderView: View {
               )
             )
         }
-    }
-}
-
-struct SearchHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchHeaderView()
     }
 }
