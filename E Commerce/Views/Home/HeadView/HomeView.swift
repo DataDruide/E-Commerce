@@ -27,18 +27,27 @@ struct HomeView: View {
                             .cornerRadius(8)
                         
                         VStack {
-                                       Text("Order 9650960549:")
-                                           .font(.custom("Montserrat", size: 18).weight(.medium))
-                                           .foregroundColor(.black)
-                                       
-                                       Text(timeString(time: elapsedTime))
-                                           .font(.custom("Montserrat", size: 18).weight(.medium))
-                                           .foregroundColor(.black)
-                                           .onReceive(timer) { _ in
-                                               elapsedTime += 1
-                                           }
-                                   }
-                        .padding(30)
+                            Group {
+                                Text("ORDER 9650960549:")
+                                    .font(.custom("Montserrat", size: 18).weight(.medium))
+                                    .foregroundColor(.black)
+                                
+                                Text(timeString(time: elapsedTime))
+                                    .font(.custom("Montserrat", size: 18).weight(.medium))
+                                    .foregroundColor(.black)
+                                    .onReceive(timer) { _ in
+                                        elapsedTime += 1
+                                    }
+                            }
+                        }
+                        .frame(width: 190, height: 70)
+                        .background(Color.gray).opacity(0.62)
+                        .cornerRadius(25)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 25)
+                                .stroke(Color.white, lineWidth: 1)
+                        )
+                        
                         VStack {
                             Spacer()
 
@@ -46,13 +55,13 @@ struct HomeView: View {
                                 // Handle button action to toggle the sheet
                                 isPresentingTrackingOrderView.toggle()
                             }) {
-                                Text("See Details")
+                                Text("SEE DETAILS")
                                     .font(.headline)
                                     .foregroundColor(.white)
                                     .frame(width: 200)
                                     .padding(.vertical, 16)
                                     .background(Color(red: 0.4, green: 0.03, blue: 0.37))
-                                    .cornerRadius(5)
+                                    .cornerRadius(20)
                                     .blur(radius: 0.5)
                                     .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
                             }
@@ -93,6 +102,7 @@ struct HomeView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .frame(width: 80, height: 114)
+                                        .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
                                         .clipped()
                                         .offset(x: 30, y: 15)
                                 )
@@ -111,6 +121,7 @@ struct HomeView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .frame(width: 152, height: 148)
+                                        .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
                                         .clipped()
                                 )
                                 .cornerRadius(5)
@@ -133,11 +144,16 @@ struct HomeView: View {
                     
                     // "Recently Browsed" Abschnitt mit HStack
                     // body
-                    Text("Recently Browsed")
-                        .offset(x: -65, y: 20)
-                        .font(Font.custom("Montserrat", size: 24))
-                        .foregroundColor(.black)
-                    
+                    // subtitle
+                    Text("ONGOING SALES")
+                        .offset(x: -105, y: 20)
+                      .font(
+                        Font.custom("Sedgwick Ave Display", size: 17)
+                          .weight(.medium)
+
+                      )
+                      .foregroundColor(.black)
+
                     HStack(alignment: .center, spacing: 10) {
                         Rectangle()
                             .foregroundColor(.clear)
@@ -147,11 +163,12 @@ struct HomeView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 73, height: 86)
+                                    .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
                                     .clipped()
                             )
                         
                         // Caption für die erste Karte
-                        Text("Fashionnova sundress $65")
+                        Text("FASHIONNOVA SUNDRESS\n$65")
                             .font(Font.custom("Montserrat", size: 13))
                             .foregroundColor(Color(red: 0.07, green: 0.07, blue: 0.07))
                             .frame(width: 87, height: 35, alignment: .topLeading)
@@ -167,10 +184,11 @@ struct HomeView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 73, height: 86)
+                                    .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
                                     .clipped()
                             )
                         
-                        Text("green dropgown $65")
+                        Text("GREEN VELVET DRESS $65")
                             .font(Font.custom("Nunito Sans", size: 13))
                             .kerning(0.4)
                             .foregroundColor(Color(red: 0.07, green: 0.07, blue: 0.07))
@@ -183,34 +201,17 @@ struct HomeView: View {
                     
                     
                     // "Recommended Collection" Abschnitt
-                    Text("Recommended Collection")
-                        .font(Font.custom("Nunito Sans", size: 22))
-                        .offset(x: -32, y: 20)
-                        .font(Font.custom("Montserrat", size: 14))
+                    Text("OUR PROMOTIONS")
+                        .font(Font.custom("Sedgwick Ave Display", size: 22))
+                        .offset(x: -90, y: 40)
                         .foregroundColor(.black)
+                        .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
+
                     HStack {
-                        Rectangle()
-                            .foregroundColor(.clear)
-                            .frame(width: 153, height: 227)
-                            .background(
-                                Image("setcard-05")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 153, height: 227)
-                                    .clipped()
-                            )
-                        
-                        
-                        Rectangle()
-                            .foregroundColor(.clear)
-                            .frame(width: 152, height: 226)
-                            .background(
-                                Image("setcard-06")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 152, height: 226)
-                                    .clipped()
-                            )
+                        HauptView()
+                            .offset(x: 15, y: 20)
+
+                      
                     }
                     VStack(alignment: .leading, spacing: 15) {
                         HStack {
@@ -354,7 +355,7 @@ struct HomeView: View {
                                 // subtitle
                                 Text("Too much Pressure?")
                                     .font(
-                                        Font.custom("Montserrat", size: 17)
+                                        Font.custom("Sedgwick Ave Display", size: 17)
                                             .weight(.medium)
                                     )
                                     .foregroundColor(Color(red: 0.07, green: 0.07, blue: 0.07))
@@ -447,7 +448,7 @@ struct HomeView: View {
                                 .foregroundColor(Color(red: 0.4, green: 0.03, blue: 0.37))
                         }
                         .sheet(isPresented: $isPresentingCreateProfileView) {
-                            CreateProfileView()
+                            ProfileView()
                         }
                         .tag(2)
                         
@@ -510,3 +511,69 @@ struct HomeView_Previews: PreviewProvider {
     }
     
 }
+
+
+import SwiftUI
+
+struct AdCardView: View {
+    let adCard: AdCard
+    @State private var isExpanded = false
+
+    var body: some View {
+        VStack {
+            Image(adCard.imageName)
+                .resizable()
+                .scaledToFill()
+                .onTapGesture {
+                    withAnimation {
+                        isExpanded.toggle()
+                    }
+                }
+                .frame(width: isExpanded ? 200 : 150, height: isExpanded ? 200 : 150)
+                .cornerRadius(10)
+
+            if isExpanded {
+                Group {
+                    Text(adCard.title)
+                        .font(.headline)
+                        .lineLimit(20)
+                        .padding(.top, 10)
+                        .multilineTextAlignment(.center)
+                    Text(adCard.description)
+                        .font(.subheadline)
+                        .padding(.vertical, 20)
+                        .multilineTextAlignment(.center)
+                    
+                }
+            }
+        }
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 5)
+    }
+}
+
+struct HauptView: View {
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 20) {
+                ForEach(adCards) { adCard in
+                    AdCardView(adCard: adCard)
+                }
+            }
+            .padding()
+        }
+    }
+}
+
+struct AdCard: Identifiable {
+    let id = UUID()
+    let imageName: String
+    let title: String
+    let description: String
+}
+let adCards: [AdCard] = [
+    AdCard(imageName: "werbung-01", title: "Wochenangebot", description: "10 % diese Woche!"),
+    AdCard(imageName: "werbung-02", title: "Monatknüller", description: "Neue Ware jede Woche."),
+    // Weitere Werbekarten hinzufügen...
+]

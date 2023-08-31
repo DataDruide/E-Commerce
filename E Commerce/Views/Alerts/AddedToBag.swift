@@ -1,8 +1,13 @@
 import SwiftUI
+import URLImage
 
 struct AddedToBag: View {
     @State private var showingPaymentViewSheet = false
     @State private var showingCheckOutBannerSheet = false
+    @ObservedObject private var sizeViewModel = SizeViewModel() // SizeViewModel hinzugefügt
+
+    let product: Product
+
     var body: some View {
         VStack(alignment: .leading, spacing: 9) {
             HStack(alignment: .center, spacing: 3) {
@@ -35,13 +40,15 @@ struct AddedToBag: View {
                       .foregroundColor(.clear)
                       .frame(width: 166, height: 167)
                       .background(
-                        Image("thumbnail")
-                          .resizable()
-                          .aspectRatio(contentMode: .fill)
-                          .frame(width: 166, height: 167)
-                          .clipped()
-                      )
-                      .cornerRadius(5)
+                        URLImage(URL(string: product.image)!) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(5)
+                        }
+                        .frame(width: 200, height: 180))
+                        .cornerRadius(5)
+                        .clipped()
                 }
                 .frame(width: 166, height: 167)
                 
@@ -111,7 +118,13 @@ struct AddedToBag: View {
                     .cornerRadius(20)
                 }
                 .sheet(isPresented: $showingCheckOutBannerSheet) {
-                    CheckOutBanner()
+                    CheckOutBanner(selectedSize: sizeViewModel.selectedSize, product: Product(id: product.id,
+                        title: product.title,
+                        price: product.price,
+                        description: product.description,
+                        category: product.category,
+                        image: product.image,
+                        rating: Rating(rate: 4.5, count: 120)))
                 }
             }
 
@@ -119,11 +132,5 @@ struct AddedToBag: View {
         .padding(0)
         .frame(width: 354, height: 418, alignment: .topLeading)
         .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
-    }
-}
-
-struct AddedToBag_Previews: PreviewProvider {
-    static var previews: some View {
-        AddedToBag()
     }
 }

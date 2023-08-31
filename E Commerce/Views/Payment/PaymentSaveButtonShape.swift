@@ -11,7 +11,7 @@ struct PaymentSaveButtonShape: View {
                 Button(action: {
                     // Füge hier den Aktionsschritt hinzu, der beim Klicken des Buttons ausgeführt werden soll
                 }) {
-                    Text("Save")
+                    Text("SAVE")
                         .font(
                             Font.custom("Montserrat", size: 15)
                                 .weight(.medium)

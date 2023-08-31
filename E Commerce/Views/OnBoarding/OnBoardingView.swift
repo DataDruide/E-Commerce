@@ -13,6 +13,7 @@ struct OnBoardingView: View {
                 if current == 1 {
                     OnboardItem(title: "WARDROBE\nCLOTHING FOR THE NEXT GENERATION")
                         .multilineTextAlignment(.center)
+                        .font(Font.custom("Sedgwick Ave Display", size: 34))
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, alignment: .top)
@@ -22,6 +23,7 @@ struct OnBoardingView: View {
                 if current == 2 {
                     OnboardItem(title: "START YOUR FASHION TOUR")
                         .multilineTextAlignment(.center)
+                        .font(Font.custom("Sedgwick Ave Display", size: 34))
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity)
@@ -58,9 +60,11 @@ struct OnBoardingView: View {
                 }) {
                     HStack {
                         Text("Continue")
-                        Image(systemName: "chevron.right")
                             .foregroundColor(.white)
                             .fontWeight(.bold)
+
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(.white)
                     }
                     .padding()
                     .background(

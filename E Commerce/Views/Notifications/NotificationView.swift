@@ -36,7 +36,7 @@ struct NotificationView: View {
                                         Image(systemName: "slider.vertical.3")
                                             .resizable()
                                             .frame(width: 20, height: 20)
-                                            .foregroundColor(.black)
+                                            .foregroundColor(.white)
                                     }
                                     .frame(width: 30, height: 30)
                                     .background(Color(red: 0.4, green: 0.03, blue: 0.37))

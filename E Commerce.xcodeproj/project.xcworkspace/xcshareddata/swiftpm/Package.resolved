@@ -55,6 +55,15 @@
       }
     },
     {
+      "identity" : "gsplayer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wxxsw/GSPlayer.git",
+      "state" : {
+        "revision" : "706fc28fcc8e33607993903eca82d9f6c7c3f6d2",
+        "version" : "0.2.27"
+      }
+    },
+    {
       "identity" : "gtm-session-fetcher",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/gtm-session-fetcher.git",

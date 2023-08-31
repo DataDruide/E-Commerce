@@ -128,20 +128,6 @@ struct Call: Identifiable {
     var isOngoing: Bool
 }
 
-class CallCenterViewModel: ObservableObject {
-    @Published var calls: [Call] = []
-
-    func startCall(withName callerName: String) {
-        let newCall = Call(callerName: callerName, isOngoing: true)
-        calls.append(newCall)
-    }
-
-    func endCall(_ call: Call) {
-        if let index = calls.firstIndex(where: { $0.id == call.id }) {
-            calls[index].isOngoing = false
-        }
-    }
-}
 
 
 import SwiftUI
@@ -249,11 +235,6 @@ struct CallCenterListView: View {
     }
 }
 
-struct Employee: Identifiable {
-    let id = UUID()
-    let name: String
-    let phoneNumber: String
-}
 
 struct CallCenterListView_Previews: PreviewProvider {
     static var previews: some View {

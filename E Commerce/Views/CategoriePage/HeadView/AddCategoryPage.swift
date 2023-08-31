@@ -52,7 +52,7 @@ struct AddCategoryPage: View {
                             .frame(width: 200, height: 50)
                             .background(Color(red: 0.4, green: 0.03, blue: 0.37))
                             .foregroundColor(.white)
-                            .cornerRadius(10)
+                            .cornerRadius(25)
                     }
                     .sheet(isPresented: $isSheetPresented) {
                         ProductView() // Zeigt das Sheet mit der ProductView an
@@ -66,7 +66,7 @@ struct AddCategoryPage: View {
                             .frame(width: 200, height: 50)
                             .background(Color(red: 0.4, green: 0.03, blue: 0.37))
                             .foregroundColor(.white)
-                            .cornerRadius(10)
+                            .cornerRadius(25)
                     }
                     .sheet(isPresented: $isVideoSheetPresented) {
                         VideoListItem(video: Video(id: "onlineshopping", name: "Onlineshopping", headline: "A real Shopping Adventuere"))
@@ -83,13 +83,7 @@ struct AddCategoryPage: View {
         }
     }
 
-//
-//struct AddCategoryPage_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddCategoryPage()
-//    }
-//}
-//
+
 
 struct FooterView: View {
     var body: some View {

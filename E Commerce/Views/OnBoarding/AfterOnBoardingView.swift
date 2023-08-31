@@ -24,7 +24,7 @@ struct AfterOnBoardingView: View {
 //                    .padding()
                 Spacer()
                 Text("WARDROBE\nALL YOUR CLOTHING\nNEEDS")
-                    .font(Font.custom("Space Grotesk", size: 34))
+                    .font(Font.custom("Sedgwick Ave Display", size: 34))
                     .kerning(0.25)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)

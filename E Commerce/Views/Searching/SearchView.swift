@@ -1,20 +1,36 @@
 import SwiftUI
+import URLImage
 
 struct SearchView: View {
-    @ObservedObject var productViewModel = ProductViewModel()
-    @State private var searchText = ""
+    @StateObject private var viewModel = ProductViewModel()
+    @State private var searchText = "" // Add a state for searchText
+
     @State private var isSearching = false
 
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
             Spacer()
-            SearchHeaderView(searchText: $productViewModel.searchText, isSearching: $isSearching)
+            SearchHeaderView(searchText: $searchText, isSearching: $isSearching)
                 .onAppear {
                     // Hier könntest du den API-Aufruf durchführen und die Daten im productViewModel.products speichern
                 }
-            List(productViewModel.products.filter { searchText.isEmpty ? true : $0.title.lowercased().contains(searchText.lowercased()) }) { product in
-                Text(product.title)
+            List(viewModel.filteredProducts) { product in
+                NavigationLink(destination: ProductDetail(product: product)) {
+                    VStack(alignment: .leading) {
+                        URLImage(URL(string: product.image)!) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
+                        }
+                        Text(product.title)
+                            .font(.headline)
+                        Text("\(product.price) $")
+                            .foregroundColor(.gray)
+                    }
+                }
             }
+            .navigationBarTitle("Products")
             Spacer()
             Image(systemName: "magnifyingglass.circle.fill")
                 .font(.system(size: 100))

@@ -5,7 +5,7 @@ import SwiftUI
 struct PaymentBoxShape: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            Text("Total")
+            Text("TOTAL")
                 .font(.custom("Montserrat", size: 17))
                 .fontWeight(.medium)
                 .foregroundColor(.black)
@@ -40,8 +40,12 @@ struct PaymentBoxShape: View {
         }
         .padding(20)
         .background(Color.gray.opacity(0.12))
-        .cornerRadius(5)
+        .overlay(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(Color.black, lineWidth: 1)
+        )
         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
+        
     }
 }
 

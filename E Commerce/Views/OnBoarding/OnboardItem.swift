@@ -22,7 +22,7 @@ struct OnboardItem: View {
                 .kerning(0.8) // Anpassung des horizontalen Abstands zwischen Buchstaben in einem Text.
                 .padding(.vertical, 12)
                 .padding(.horizontal, 20)
-                .foregroundColor(.yellow)
+                .foregroundColor(.white)
             
             // Platzhalter-Spacer, um den Inhalt vertikal zu zentrieren.
             Spacer()

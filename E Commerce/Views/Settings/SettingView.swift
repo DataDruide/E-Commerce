@@ -19,7 +19,7 @@ struct SettingView: View {
                     }
                     
                     // NavigationLink zur "CreateProfileView" Ansicht
-                    NavigationLink(destination: CreateProfileView()) {
+                    NavigationLink(destination: ProfileView()) {
                         Label("Profil erstellen", systemImage: "person")
                     }
                     
@@ -72,7 +72,6 @@ struct SettingView: View {
     }
 }
 
-// ... Weitere Ansichten, Modelle und Previews ...
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {

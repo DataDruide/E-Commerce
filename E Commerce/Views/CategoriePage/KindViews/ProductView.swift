@@ -20,8 +20,8 @@ struct ProductView: View {
                             URLImage(URL(string: product.image)!) { image in
                                 image
                                     .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 80, height: 80)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50, height: 50)
                             }
                             Text(product.title)
                                 .font(.headline)
