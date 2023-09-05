@@ -20,7 +20,7 @@ struct LoginView: View {
             VStack(spacing: 20) {
                 
                 
-                Text("Start\nYour Style Journey")
+                Text("START\nYOUR STYLE JOURNEY")
                     .font(.system(size: 40, weight: .thin, design: .rounded))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
@@ -39,7 +39,7 @@ struct LoginView: View {
                 
                 VStack(spacing: 10) {
                     // Email TextField
-                    TextField("Email", text: $email)
+                    TextField("EMAIL", text: $email)
                         .padding(.horizontal, 10)
                         .foregroundColor(.white)
                         .frame(width: 370, height: 45)
@@ -55,7 +55,7 @@ struct LoginView: View {
                         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
 
                     
-                    SecureField("Password", text: $password)
+                    SecureField("PASSWORD", text: $password)
                         .padding(.horizontal, 10)
                         .foregroundColor(.white)
                         .frame(width: 370, height: 45)
@@ -80,7 +80,7 @@ struct LoginView: View {
                                     authService.signUp(email: email, password: password)
                                     isShowingAlertBanner.toggle()
                                 }) {
-                                    Text("Registrieren")
+                                    Text("REGISTRIEREN")
                                         .font(.headline)
                                         .foregroundColor(.white)
                                         .padding(.horizontal, 70)
@@ -92,7 +92,7 @@ struct LoginView: View {
                                                     .blur(radius: 0.5)
                                                     .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
                                                 
-                                                Text("Registrieren")
+                                                Text("REGISTRIEREN")
                                                     .font(.headline)
                                                     .foregroundColor(.white)
                                             }
@@ -112,7 +112,7 @@ struct LoginView: View {
                                     isButtonPressed = true
                                     authService.signIn(email: email, password: password)
                                 }) {
-                                    Text("Anmelden")
+                                    Text("ANMELDEN")
                                         .font(.headline)
                                         .foregroundColor(.white)
                                         .padding(.horizontal, 77)
@@ -124,7 +124,7 @@ struct LoginView: View {
                                                     .blur(radius: 0.5)
                                                     .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
                                                 
-                                                Text("Anmelden")
+                                                Text("ANMELDEN")
                                                     .font(.headline)
                                                     .foregroundColor(.white)
                                             }

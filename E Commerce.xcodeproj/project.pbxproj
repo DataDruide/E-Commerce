@@ -24,7 +24,6 @@
 		E73E2D4C2AA0218300F213EF /* CallCenterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73E2D4B2AA0218300F213EF /* CallCenterViewModel.swift */; };
 		E73E2D512AA0265B00F213EF /* GSPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = E73E2D502AA0265B00F213EF /* GSPlayer */; };
 		E77279122A9CB37B00EBE7D7 /* ProductSizeSelectionShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77279112A9CB37B00EBE7D7 /* ProductSizeSelectionShape.swift */; };
-		E772791C2A9DF64900EBE7D7 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772791B2A9DF64900EBE7D7 /* Size.swift */; };
 		E772791E2A9DFFE200EBE7D7 /* SizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772791D2A9DFFE200EBE7D7 /* SizeViewModel.swift */; };
 		E776271D2A941D80008F8B82 /* E_CommerceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776271C2A941D80008F8B82 /* E_CommerceApp.swift */; };
 		E776271F2A941D80008F8B82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776271E2A941D80008F8B82 /* ContentView.swift */; };
@@ -83,6 +82,14 @@
 		E77A24E92A97E53900BE725F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A24E82A97E53900BE725F /* Order.swift */; };
 		E77A24EB2A97E5BE00BE725F /* TrackingOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A24EA2A97E5BE00BE725F /* TrackingOrderViewModel.swift */; };
 		E77A24ED2A97E61D00BE725F /* TrackingHeaderShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A24EC2A97E61D00BE725F /* TrackingHeaderShape.swift */; };
+		E78815DF2AA69E28008572C7 /* MensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78815DE2AA69E28008572C7 /* MensViewModel.swift */; };
+		E78815E12AA69E4F008572C7 /* WomanClothingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78815E02AA69E4F008572C7 /* WomanClothingViewModel.swift */; };
+		E78815E32AA69E8D008572C7 /* MenClothingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78815E22AA69E8D008572C7 /* MenClothingView.swift */; };
+		E78815E52AA69EC5008572C7 /* WomanClothingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78815E42AA69EC5008572C7 /* WomanClothingView.swift */; };
+		E78815E72AA69EE5008572C7 /* CategoryProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78815E62AA69EE5008572C7 /* CategoryProductView.swift */; };
+		E78815EA2AA69F2C008572C7 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78815E92AA69F2C008572C7 /* FooterView.swift */; };
+		E78815EC2AA69F6C008572C7 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78815EB2AA69F6C008572C7 /* Rating.swift */; };
+		E78815F22AA740E2008572C7 /* PaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78815F12AA740E2008572C7 /* PaymentMethodView.swift */; };
 		E7AC696D2A98D70600EA63E0 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AC696C2A98D70600EA63E0 /* PaymentView.swift */; };
 		E7FCB3792A9A73CD003E386B /* PaymentCardNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCB3782A9A73CD003E386B /* PaymentCardNumberView.swift */; };
 		E7FCB37B2A9A7402003E386B /* PaymentTextField1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCB37A2A9A7402003E386B /* PaymentTextField1View.swift */; };
@@ -149,7 +156,6 @@
 		E73E2D492AA020E200F213EF /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		E73E2D4B2AA0218300F213EF /* CallCenterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCenterViewModel.swift; sourceTree = "<group>"; };
 		E77279112A9CB37B00EBE7D7 /* ProductSizeSelectionShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSizeSelectionShape.swift; sourceTree = "<group>"; };
-		E772791B2A9DF64900EBE7D7 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		E772791D2A9DFFE200EBE7D7 /* SizeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeViewModel.swift; sourceTree = "<group>"; };
 		E77627192A941D80008F8B82 /* E Commerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E Commerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E776271C2A941D80008F8B82 /* E_CommerceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E_CommerceApp.swift; sourceTree = "<group>"; };
@@ -195,6 +201,14 @@
 		E77A24E82A97E53900BE725F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		E77A24EA2A97E5BE00BE725F /* TrackingOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingOrderViewModel.swift; sourceTree = "<group>"; };
 		E77A24EC2A97E61D00BE725F /* TrackingHeaderShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingHeaderShape.swift; sourceTree = "<group>"; };
+		E78815DE2AA69E28008572C7 /* MensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensViewModel.swift; sourceTree = "<group>"; };
+		E78815E02AA69E4F008572C7 /* WomanClothingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomanClothingViewModel.swift; sourceTree = "<group>"; };
+		E78815E22AA69E8D008572C7 /* MenClothingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenClothingView.swift; sourceTree = "<group>"; };
+		E78815E42AA69EC5008572C7 /* WomanClothingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomanClothingView.swift; sourceTree = "<group>"; };
+		E78815E62AA69EE5008572C7 /* CategoryProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProductView.swift; sourceTree = "<group>"; };
+		E78815E92AA69F2C008572C7 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		E78815EB2AA69F6C008572C7 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		E78815F12AA740E2008572C7 /* PaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodView.swift; sourceTree = "<group>"; };
 		E7AC696C2A98D70600EA63E0 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		E7FCB3782A9A73CD003E386B /* PaymentCardNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardNumberView.swift; sourceTree = "<group>"; };
 		E7FCB37A2A9A7402003E386B /* PaymentTextField1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTextField1View.swift; sourceTree = "<group>"; };
@@ -540,9 +554,9 @@
 				E77A24E82A97E53900BE725F /* Order.swift */,
 				E7FCB3F22A9B7397003E386B /* VideoModel.swift */,
 				E7FCB3F52A9BB2B5003E386B /* Video.swift */,
-				E772791B2A9DF64900EBE7D7 /* Size.swift */,
 				E73E2D272A9FFDAC00F213EF /* PaymentProvider.swift */,
 				E73E2D492AA020E200F213EF /* Employee.swift */,
+				E78815EB2AA69F6C008572C7 /* Rating.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -550,6 +564,7 @@
 		E77627892A94B29E008F8B82 /* CategoriePage */ = {
 			isa = PBXGroup;
 			children = (
+				E78815E82AA69F05008572C7 /* CategoryFooter */,
 				E7FCB3D52A9AC829003E386B /* Enums */,
 				E77A24D82A97838600BE725F /* HeadView */,
 				E77A24DA2A9783C700BE725F /* KindViews */,
@@ -625,6 +640,8 @@
 				E7FCB3E62A9B59DA003E386B /* ProductViewModel.swift */,
 				E772791D2A9DFFE200EBE7D7 /* SizeViewModel.swift */,
 				E73E2D4B2AA0218300F213EF /* CallCenterViewModel.swift */,
+				E78815DE2AA69E28008572C7 /* MensViewModel.swift */,
+				E78815E02AA69E4F008572C7 /* WomanClothingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -643,6 +660,9 @@
 				E7FCB3E22A9B5946003E386B /* ProductView.swift */,
 				E7FCB3E42A9B5981003E386B /* ProductDetail.swift */,
 				E77279112A9CB37B00EBE7D7 /* ProductSizeSelectionShape.swift */,
+				E78815E22AA69E8D008572C7 /* MenClothingView.swift */,
+				E78815E42AA69EC5008572C7 /* WomanClothingView.swift */,
+				E78815E62AA69EE5008572C7 /* CategoryProductView.swift */,
 			);
 			path = KindViews;
 			sourceTree = "<group>";
@@ -673,6 +693,14 @@
 			path = HeadView;
 			sourceTree = "<group>";
 		};
+		E78815E82AA69F05008572C7 /* CategoryFooter */ = {
+			isa = PBXGroup;
+			children = (
+				E78815E92AA69F2C008572C7 /* FooterView.swift */,
+			);
+			path = CategoryFooter;
+			sourceTree = "<group>";
+		};
 		E7AC696B2A98D6F800EA63E0 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,6 +713,7 @@
 				E7FCB3822A9A74A9003E386B /* PaymentBoxShape.swift */,
 				E7FCB3842A9A74CD003E386B /* PaymentButton.swift */,
 				E7FCB3862A9A74EC003E386B /* PaymentHeaderView.swift */,
+				E78815F12AA740E2008572C7 /* PaymentMethodView.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -931,6 +960,7 @@
 				E77A24E92A97E53900BE725F /* Order.swift in Sources */,
 				E7FCB3FD2A9BCCF7003E386B /* VideoPlayerHelper.swift in Sources */,
 				E7FCB3D72A9AC83B003E386B /* Category.swift in Sources */,
+				E78815E12AA69E4F008572C7 /* WomanClothingViewModel.swift in Sources */,
 				E7FCB38C2A9A9F7C003E386B /* UIViewControllerRepresentable.swift in Sources */,
 				E77A24BC2A9587C100BE725F /* SettingView.swift in Sources */,
 				E77A24C42A95FFE800BE725F /* AlertInformationBanner.swift in Sources */,
@@ -948,7 +978,6 @@
 				E73E2D3F2AA0015300F213EF /* Footer2View.swift in Sources */,
 				E73E2D362AA000AE00F213EF /* PdfView.swift in Sources */,
 				E73E2D3D2AA0013400F213EF /* CustomHeaderView.swift in Sources */,
-				E772791C2A9DF64900EBE7D7 /* Size.swift in Sources */,
 				E77A24E12A9796E800BE725F /* OrderPlacedBanner.swift in Sources */,
 				E77A24E62A97D55000BE725F /* CheckBoxView.swift in Sources */,
 				E73E2D262A9FFD6500F213EF /* BackendSimulator.swift in Sources */,
@@ -960,6 +989,7 @@
 				E77627592A94269A008F8B82 /* AuthService.swift in Sources */,
 				E776278B2A94B2BA008F8B82 /* AddCategoryPage.swift in Sources */,
 				E77A24D22A97816600BE725F /* FAQQuestion.swift in Sources */,
+				E78815F22AA740E2008572C7 /* PaymentMethodView.swift in Sources */,
 				E77A24E42A979B2200BE725F /* TrackingOrderView.swift in Sources */,
 				E77A24D42A97818700BE725F /* FAQSection.swift in Sources */,
 				E7FCB37D2A9A7426003E386B /* PaymentTextField2View.swift in Sources */,
@@ -967,12 +997,15 @@
 				E7FCB3E72A9B59DA003E386B /* ProductViewModel.swift in Sources */,
 				E73E2D4A2AA020E200F213EF /* Employee.swift in Sources */,
 				E73E2D322AA0002100F213EF /* PdfExtension.swift in Sources */,
+				E78815EC2AA69F6C008572C7 /* Rating.swift in Sources */,
 				E7FCB3E32A9B5946003E386B /* ProductView.swift in Sources */,
 				E7FCB37F2A9A745F003E386B /* PaymentProgressBarView.swift in Sources */,
 				E77A24ED2A97E61D00BE725F /* TrackingHeaderShape.swift in Sources */,
 				E77627822A947FE4008F8B82 /* HomeView.swift in Sources */,
 				E77A24A92A95781B00BE725F /* SearchView.swift in Sources */,
 				E7AC696D2A98D70600EA63E0 /* PaymentView.swift in Sources */,
+				E78815DF2AA69E28008572C7 /* MensViewModel.swift in Sources */,
+				E78815EA2AA69F2C008572C7 /* FooterView.swift in Sources */,
 				E77627542A9425F9008F8B82 /* AfterOnBoardingView.swift in Sources */,
 				E776271D2A941D80008F8B82 /* E_CommerceApp.swift in Sources */,
 				E73E2D342AA0005C00F213EF /* PdfShareSheet.swift in Sources */,
@@ -983,13 +1016,16 @@
 				E7FCB3F62A9BB2B5003E386B /* Video.swift in Sources */,
 				E7FCB3E52A9B5981003E386B /* ProductDetail.swift in Sources */,
 				E77A24EB2A97E5BE00BE725F /* TrackingOrderViewModel.swift in Sources */,
+				E78815E52AA69EC5008572C7 /* WomanClothingView.swift in Sources */,
 				E73E2D482AA0207F00F213EF /* TermSection.swift in Sources */,
 				E77A24C22A95885500BE725F /* CreateProfileView.swift in Sources */,
+				E78815E32AA69E8D008572C7 /* MenClothingView.swift in Sources */,
 				E77A24DF2A978A3A00BE725F /* CheckOutBanner.swift in Sources */,
 				E7FCB3932A9AABF4003E386B /* CodableBundleExtension.swift in Sources */,
 				E776274F2A9421BF008F8B82 /* OnBoardingView.swift in Sources */,
 				E73E2D4C2AA0218300F213EF /* CallCenterViewModel.swift in Sources */,
 				E77627472A941F1C008F8B82 /* SplashView.swift in Sources */,
+				E78815E72AA69EE5008572C7 /* CategoryProductView.swift in Sources */,
 				E772791E2A9DFFE200EBE7D7 /* SizeViewModel.swift in Sources */,
 				E77627882A948552008F8B82 /* Product.swift in Sources */,
 				E7FCB3892A9A991D003E386B /* LogOutShape.swift in Sources */,

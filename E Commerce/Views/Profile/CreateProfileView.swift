@@ -10,34 +10,35 @@ struct ProfileView: View {
     @State private var email: String = ""
     @State private var mobile: String = ""
 
-    
     var body: some View {
         ScrollView {
-            VStack(spacing: 5) {
+            VStack(spacing: 20) {
                 CreateProfileHeaderView()
                 
-                Section(header: Text("Personal Information")) {
-                    CustomTextField(placeholder: "Firstname", text: $firstName)
-                    CustomTextField(placeholder: "Lastname", text: $lastName)
+                Section(header: Text("Personal Information").font(.headline)) {
+                    CustomTextField(placeholder: "First Name", text: $firstName)
+                    CustomTextField(placeholder: "Last Name", text: $lastName)
                     CustomTextField(placeholder: "Address", text: $address)
-                    CustomTextField(placeholder: "Zipcode", text: $zipCode)
+                    CustomTextField(placeholder: "Zip Code", text: $zipCode)
                 }
                 
-                Section(header: Text("Contact Information")) {
+                Section(header: Text("Contact Information").font(.headline)) {
                     CustomTextField(placeholder: "Phone", text: $phone)
                     CustomTextField(placeholder: "E-Mail", text: $email)
                     CustomTextField(placeholder: "Mobile", text: $mobile)
-
                 }
                 
-                Button("Save Data") {
-                    // Perform action to save data
+                Button(action: {
+                    // Hier sollte die Aktion zur Speicherung der Daten ausgeführt werden
+                }) {
+                    Text("Save Data")
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 40)
+                        .background(Color(red: 0.4, green: 0.03, blue: 0.37))
+                        .foregroundColor(Color.white)
+                        .cornerRadius(25)
+                        .padding(.vertical, 10)
                 }
-                .frame(width: 250, height: 40)
-                .background(Color(red: 0.4, green: 0.03, blue: 0.37))
-                .foregroundColor(Color.white)
-                .cornerRadius(25)
-                .padding(.vertical, 10)
             }
             .padding()
             

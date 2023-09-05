@@ -1,9 +1,3 @@
-//
-//  Video.swift
-//  E Commerce
-//
-//  Created by Marcel Zimmermann on 27.08.23.
-//
 
 import Foundation
 
