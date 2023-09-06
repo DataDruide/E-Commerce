@@ -34,8 +34,8 @@ struct AddCategoryPage: View {
                     HStack {
                         Spacer()
                         Text("TO THE PRODUCTS")
-                            .font(.title)
-                            .fontWeight(.bold)
+                            .font(Font.custom("Sedgwick Ave Display", size: 34))
+                            .kerning(0.25)                            .fontWeight(.bold)
                             .foregroundColor(.primary)
                         Spacer()
                     }
@@ -50,8 +50,8 @@ struct AddCategoryPage: View {
                     
                     // Titeltext
                     Text("WELCOME TO WARDROBE!")
-                        .font(.title)
-                        .fontWeight(.bold)
+                        .font(Font.custom("Sedgwick Ave Display", size: 28))
+                        .kerning(0.25)                        .fontWeight(.bold)
                         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
                         .padding(.bottom, 20)
                     

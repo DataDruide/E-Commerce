@@ -16,12 +16,11 @@ struct SearchHeaderView: View {
             
             VStack(spacing: 0) {
                 Text("Willkommen")
-                    .font(.custom("Poppins-Bold", size: 32)) // Verwende deine gewünschte Schriftart
-                    .foregroundColor(.white)
+                    .font(Font.custom("Sedgwick Ave Display", size: 34))
+                    .kerning(0.25)                    .foregroundColor(.white)
                     .padding()
                 
                 HStack {
-                    Spacer()
                     TextField("Suche...", text: $searchText)
                         .padding()
                         .padding(.leading, 30) // Angepasstes Padding hier

@@ -15,13 +15,7 @@ struct AfterOnBoardingView: View {
                 .ignoresSafeArea(.all)
             VStack(spacing: 8) {
                 Spacer()
-//                Text("Richtide")
-//                    .font(Font.custom("Space Grotesk", size: 24))
-//                    .kerning(0.25)
-//                    .multilineTextAlignment(.center)
-//                    .foregroundColor(.white)
-//                    .fontWeight(.bold)
-//                    .padding()
+
                 Spacer()
                 Text("WARDROBE\nALL YOUR CLOTHING\nNEEDS")
                     .font(Font.custom("Sedgwick Ave Display", size: 34))
@@ -54,9 +48,7 @@ struct AfterOnBoardingView: View {
                 Spacer()
 
             }
-//            .padding()
-//            .frame(width: 400, height: 900)
-           // .background(Color(red: 0.4, green: 0.03, blue: 0.37))                 .cornerRadius(10)
+             .cornerRadius(10)
         }
     }
 }

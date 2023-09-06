@@ -7,6 +7,7 @@ struct Pdf2View: View {
            
            var body: some View {
                ScrollView {
+                   Spacer()
                        Text(filename)
                    Button {
                        sharePDF(content: {self}, fileName: filename)

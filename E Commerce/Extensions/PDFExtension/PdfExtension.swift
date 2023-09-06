@@ -1,37 +1,37 @@
-
 import Foundation
 import SwiftUI
 
-extension View{
+// Eine SwiftUI View-Erweiterung für das Exportieren von Inhalten als PDF und für das Teilen von PDFs.
+extension View {
     
-    func sharePDF<Content: View> (@ViewBuilder content: @escaping () -> Content, fileName: String) {
+    // Eine Funktion zum Teilen von PDFs. Sie erstellt ein PDF aus dem angegebenen Inhalt und teilt es.
+    func sharePDF<Content: View>(@ViewBuilder content: @escaping () -> Content, fileName: String) {
         exportPDF(content: content, completion: { status , url in
             if let url = url, status {
-                ShareSheet.instance.share(items: [url])
+                ShareSheet.instance.share(items: [url]) // Teile das PDF
             } else {
-                print("⚠️ Failed to make PDF")
+                print("⚠️ PDF-Erstellung fehlgeschlagen")
             }
         }, fileName: fileName)
     }
     
-    // MARK: Extracting View's Height and width with the Help of Hosting Controller and ScrollView
-    fileprivate func convertToScrollView<Content: View>(@ViewBuilder content: @escaping ()->Content)->UIScrollView{
+    // Eine Funktion zum Konvertieren einer SwiftUI View in eine UIScrollView.
+    fileprivate func convertToScrollView<Content: View>(@ViewBuilder content: @escaping () -> Content) -> UIScrollView {
         
         let scrollView = UIScrollView()
         
-        // MARK: Converting SwiftUI View to UIKit View
+        // SwiftUI View in eine UIKit View umwandeln
         let hostingController = UIHostingController(rootView: content()).view!
         hostingController.translatesAutoresizingMaskIntoConstraints = false
         
-        // MARK: Constraints
+        // Constraints festlegen
         let constraints = [
-        
             hostingController.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             hostingController.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             hostingController.topAnchor.constraint(equalTo: scrollView.topAnchor),
             hostingController.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             
-            // Width Anchor
+            // Breitenanker
             hostingController.widthAnchor.constraint(equalToConstant: screenBounds().width)
         ]
         scrollView.addSubview(hostingController)
@@ -41,76 +41,74 @@ extension View{
         return scrollView
     }
     
-    // MARK: Export to PDF
-    // MARK: Completion Handler will Send Status and URL
-    fileprivate func exportPDF<Content: View>(@ViewBuilder content: @escaping ()->Content,completion: @escaping (Bool,URL?)->(), fileName: String){
+    // Eine Funktion zum Exportieren von Inhalten als PDF mit einer Completion-Handler-Funktion.
+    fileprivate func exportPDF<Content: View>(@ViewBuilder content: @escaping () -> Content, completion: @escaping (Bool, URL?) -> (), fileName: String) {
         
-        // MARK: Temp URL
+        // Temporäre URL für das PDF
         let documentDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-        // MARK: To Generate New File when ever its generated
         let outputFileURL = documentDirectory.appendingPathComponent("\(fileName)\(UUID().uuidString).pdf")
         
-        // MARK: PDF View
+        // SwiftUI View in eine ScrollView konvertieren
         let pdfView = convertToScrollView {
             content()
         }
         pdfView.tag = 1009
         let size = pdfView.contentSize
-        // Removing Safe Area Top Value
+        // Safe Area Top-Wert entfernen
         pdfView.frame = CGRect(x: 0, y: getSafeArea().top, width: size.width, height: size.height)
         
-        // MARK: Attaching to Root View and rendering the PDF
+        // PDF-Rendering vorbereiten
         getRootController().view.insertSubview(pdfView, at: 0)
         
-        // MARK: Rendering PDF
+        // PDF-Rendering durchführen
         let renderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         
-        do{
-            
+        do {
             try renderer.writePDF(to: outputFileURL, withActions: { context in
-                
                 context.beginPage()
                 pdfView.layer.render(in: context.cgContext)
             })
             
-            completion(true,outputFileURL)
-        }
-        catch{
-            completion(false,nil)
+            completion(true, outputFileURL)
+        } catch {
+            completion(false, nil)
             print(error.localizedDescription)
         }
         
-        // Removing the added View
+        // Hinzugefügte View entfernen
         getRootController().view.subviews.forEach { view in
-            if view.tag == 1009{
-                print("Removed")
+            if view.tag == 1009 {
+                print("Entfernt")
                 view.removeFromSuperview()
             }
         }
     }
     
-    fileprivate func screenBounds()->CGRect{
+    // Bildschirmgröße abrufen
+    fileprivate func screenBounds() -> CGRect {
         return UIScreen.main.bounds
     }
     
-    fileprivate func getRootController()->UIViewController{
-        guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else{
+    // Root-ViewController abrufen
+    fileprivate func getRootController() -> UIViewController {
+        guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
             return .init()
         }
         
-        guard let root = screen.windows.first?.rootViewController else{
+        guard let root = screen.windows.first?.rootViewController else {
             return .init()
         }
         
         return root
     }
     
-    fileprivate func getSafeArea()->UIEdgeInsets{
-        guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else{
+    // Safe Area abrufen
+    fileprivate func getSafeArea() -> UIEdgeInsets {
+        guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
             return .zero
         }
         
-        guard let safeArea = screen.windows.first?.safeAreaInsets else{
+        guard let safeArea = screen.windows.first?.safeAreaInsets else {
             return .zero
         }
         

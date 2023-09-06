@@ -1,10 +1,8 @@
-
 import Foundation
 
-// Mit diesem VideoModel können wir nun mit der JSON File Videos kommunzieren
-struct VideoModel: Codable, Identifiable { // Datenmodel Videomodel
-    let id: String
-    let name: String
-    let headline: String
-    
+// Eine Struktur zur Darstellung von Videos mit Codable und Identifiable-Protokollen.
+struct VideoModel: Codable, Identifiable {
+    let id: String // Eine eindeutige Identifikations-ID für jedes Video.
+    let name: String // Der Name des Videos.
+    let headline: String // Die Überschrift oder Beschreibung des Videos.
 }

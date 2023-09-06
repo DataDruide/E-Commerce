@@ -1,50 +1,48 @@
 
-
 import Foundation
 import SwiftUI
 
 class ProductViewModel: ObservableObject {
-    // Store all products from the API
+    // Speichern aller Produkte aus der API
     @Published var products: [Product] = []
     
-    // Store the filtered products based on search text
+    // Speichern der gefilterten Produkte basierend auf dem Suchtext
     @Published var filteredProducts: [Product] = []
 
-    // Store the search text
+    // Speichern des Suchtexts
     @Published var searchText: String = "" {
         didSet {
-            // Call the filtering method whenever the search text changes
+            // Rufe die Filtermethode immer dann auf, wenn sich der Suchtext ändert
             filterProducts()
         }
     }
     
-    // ApiService instance for fetching products
+    // Instanz der ApiService zum Abrufen von Produkten
     private let apiService = ApiService()
 
-    // Fetch products from the API and update the lists
+    // Produkte von der API abrufen und die Listen aktualisieren
     func fetchProducts() {
         apiService.fetchProducts { products in
             DispatchQueue.main.async {
                 self.products = products
-                // After fetching, also update the filtered list
+                // Nach dem Abrufen auch die gefilterte Liste aktualisieren
                 self.filterProducts()
             }
         }
     }
 
-    // Filter the products based on search text
+    // Produkte basierend auf dem Suchtext filtern
     private func filterProducts() {
         if searchText.isEmpty {
-            // If search text is empty, show all products
+            // Wenn der Suchtext leer ist, alle Produkte anzeigen
             filteredProducts = products
         } else {
-            // Otherwise, filter products based on the search text
+            // Andernfalls Produkte basierend auf dem Suchtext filtern
             filteredProducts = products.filter { product in
-                // Make sure to compare lowercased versions of both the title and search text
+                // Achten Sie darauf, die kleingeschriebenen Versionen des Titels und des Suchtexts zu vergleichen
                 product.title.lowercased().contains(searchText.lowercased())
             }
         }
     }
 }
-
 

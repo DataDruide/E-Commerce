@@ -1,21 +1,21 @@
 import Foundation
 import FirebaseAuth
 
-// The AuthService class is an ObservableObject class that contains various methods for managing authentication functions
+// Die AuthService-Klasse ist eine ObservableObject-Klasse, die verschiedene Methoden für die Verwaltung von Authentifizierungsfunktionen enthält.
 final class AuthService: ObservableObject {
     
-    // The "user" property is an optional User and is updated when the authentication state changes
+    // Die "user"-Eigenschaft ist ein optionales User-Objekt und wird aktualisiert, wenn sich der Authentifizierungszustand ändert.
     var user: User? {
         didSet {
             objectWillChange.send()
         }
     }
     
-    // Method to add a listener for changes in authentication state
-    // This method registers an observer for authentication state changes.
-    // When the authentication state changes (e.g., a user logs in or logs out),
-    // the provided closure is called to return the new user.
-    // The observer is weakly referenced to avoid potential cycles.
+    // Methode zum Hinzufügen eines Listeners für Änderungen im Authentifizierungszustand.
+    // Diese Methode registriert einen Beobachter für Änderungen im Authentifizierungszustand.
+    // Wenn sich der Authentifizierungszustand ändert (z. B. ein Benutzer sich ein- oder ausloggt),
+    // wird der bereitgestellte Abschluss aufgerufen, um den neuen Benutzer zurückzugeben.
+    // Der Beobachter wird schwach referenziert, um potenzielle Zyklen zu vermeiden.
     func listenToAuthState() {
         Auth.auth().addStateDidChangeListener { [weak self] _, user in
             guard let self = self else { return }
@@ -23,44 +23,44 @@ final class AuthService: ObservableObject {
         }
     }
     
-    // Method to register a new user with an email address and password
-    // This method allows registering a new user with an email address and password.
-    // The user is registered with the provided credentials on Firebase Authentication.
-    // If an error occurs, an error message is printed to the console.
+    // Methode zum Registrieren eines neuen Benutzers mit einer E-Mail-Adresse und einem Passwort.
+    // Diese Methode ermöglicht die Registrierung eines neuen Benutzers mit einer E-Mail-Adresse und einem Passwort.
+    // Der Benutzer wird mit den bereitgestellten Anmeldeinformationen bei Firebase Authentication registriert.
+    // Wenn ein Fehler auftritt, wird eine Fehlermeldung in die Konsole gedruckt.
     func signUp(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
-                print("An error occurred: \(error)")
+                print("Ein Fehler ist aufgetreten: \(error)")
                 return
             }
-            // Handle successful registration if needed
+            // Erfolgreiche Registrierung behandeln, wenn erforderlich
         }
     }
     
-    // Method to sign in a registered user with an email address and password
-    // This method allows signing in a registered user with an email address and password.
-    // The login credentials are verified with Firebase Authentication, and upon successful login,
-    // the user is authenticated as a signed-in user within the app.
-    // If an error occurs, an error message is printed to the console.
+    // Methode zum Anmelden eines registrierten Benutzers mit einer E-Mail-Adresse und einem Passwort.
+    // Diese Methode ermöglicht die Anmeldung eines registrierten Benutzers mit einer E-Mail-Adresse und einem Passwort.
+    // Die Anmeldeinformationen werden mit Firebase Authentication überprüft, und bei erfolgreicher Anmeldung
+    // wird der Benutzer als angemeldeter Benutzer in der App authentifiziert.
+    // Wenn ein Fehler auftritt, wird eine Fehlermeldung in die Konsole gedruckt.
     func signIn(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error {
-                print("An error occurred: \(error)")
+                print("Ein Fehler ist aufgetreten: \(error)")
                 return
             }
-            // Handle successful login if needed
+            // Erfolgreiche Anmeldung behandeln, wenn erforderlich
         }
     }
     
-    // Method to sign out a signed-in user
-    // This method allows a signed-in user to sign out from Firebase Authentication.
-    // If an error occurs, an error message is printed to the console.
+    // Methode zum Abmelden eines angemeldeten Benutzers.
+    // Diese Methode ermöglicht es einem angemeldeten Benutzer, sich von Firebase Authentication abzumelden.
+    // Wenn ein Fehler auftritt, wird eine Fehlermeldung in die Konsole gedruckt.
     func signOut() {
         do {
             try Auth.auth().signOut()
         } catch let error {
-            print("An error occurred: \(error)")
+            print("Ein Fehler ist aufgetreten: \(error)")
         }
-        // Handle successful sign-out if needed
+        // Erfolgreiche Abmeldung behandeln, wenn erforderlich
     }
 }

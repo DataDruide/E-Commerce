@@ -1,29 +1,29 @@
 import Foundation
 
-// The ApiService class handles fetching product data from a given URL using URLSession
+// Die ApiService-Klasse behandelt das Abrufen von Produktinformationen von einer angegebenen URL unter Verwendung von URLSession.
 class ApiService {
     
-    // Method to fetch products from the specified URL and provide the results via a completion handler
+    // Methode zum Abrufen von Produkten von der angegebenen URL und Bereitstellen der Ergebnisse über einen Abschluss-Handler.
     func fetchProducts(completion: @escaping ([Product]) -> Void) {
-        // Check if the provided URL is valid
+        // Überprüfen, ob die bereitgestellte URL gültig ist.
         guard let url = URL(string: "https://fakestoreapi.com/products") else {
-            completion([])
+            completion([]) // Wenn die URL ungültig ist, wird der Abschluss-Handler mit einem leeren Array aufgerufen.
             return
         }
         
-        // Perform a data task using URLSession
+        // Führen Sie eine Datenaufgabe mit URLSession aus.
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let data = data {
-                // Initialize a JSON decoder to parse the received data
+                // Initialisieren Sie einen JSON-Decoder, um die empfangenen Daten zu analysieren.
                 let decoder = JSONDecoder()
                 if let products = try? decoder.decode([Product].self, from: data) {
-                    // Call the completion handler with the fetched products
+                    // Rufen Sie den Abschluss-Handler mit den abgerufenen Produkten auf.
                     completion(products)
                 }
             } else {
-                // Call the completion handler with an empty array in case of error
+                // Rufen Sie den Abschluss-Handler im Falle eines Fehlers mit einem leeren Array auf.
                 completion([])
             }
-        }.resume() // Start the data task
+        }.resume() // Starten Sie die Datenaufgabe.
     }
 }

@@ -9,19 +9,20 @@ struct LoginView: View {
 
     var body: some View {
         ZStack {
-            Image("setcard-07") // Hier das Bild einfügen
+            Image("Case") // Hier das Bild einfügen
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
                 .opacity(0.8) // Angepasste Opacity für das Bild
-                .contrast(0.7)
-                .offset(x: -70)
+                .contrast(1.9)
+                .offset(x: -35)
             
-            VStack(spacing: 20) {
+            VStack(spacing: 5) {
                 
-                
+                Spacer()
                 Text("START\nYOUR STYLE JOURNEY")
-                    .font(.system(size: 40, weight: .thin, design: .rounded))
+                    .font(Font.custom("Sedgwick Ave Display", size: 45))
+                    .kerning(0.25)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .shadow(color: .white, radius: 0.5, x: 0.25, y: 0.25)
@@ -29,8 +30,8 @@ struct LoginView: View {
                 Spacer()
                 
                 Text("LOGIN")
-                    .font(.system(size: 56, weight: .semibold))
-                    .foregroundColor(.white)
+                    .font(Font.custom("Sedgwick Ave Display", size: 56))
+                    .kerning(0.25)                    .foregroundColor(.white)
                     .fontWeight(.bold)
                     .blur(radius: 0.5)
                     .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
@@ -44,7 +45,7 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .frame(width: 370, height: 45)
                         .background(Color.black.opacity(0.23))
-                        .cornerRadius(10)
+                        .cornerRadius(18)
                         .overlay(
                             RoundedRectangle(cornerRadius: 18)
                                 .stroke(Color.white, lineWidth: 2)
@@ -60,7 +61,7 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .frame(width: 370, height: 45)
                         .background(Color.black.opacity(0.23))
-                        .cornerRadius(10)
+                        .cornerRadius(18)
                         .overlay(
                             RoundedRectangle(cornerRadius: 18)
                                 .stroke(Color.white, lineWidth: 2)
@@ -76,60 +77,53 @@ struct LoginView: View {
                 Spacer()
                 
                 Button(action: {
-                                    isButtonPressed = true // Setze den Zustand des Buttons auf "Gedrückt"
-                                    authService.signUp(email: email, password: password)
-                                    isShowingAlertBanner.toggle()
-                                }) {
-                                    Text("REGISTRIEREN")
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                        .padding(.horizontal, 70)
-                                        .padding(.vertical, 16)
-                                        .background(
-                                            ZStack {
-                                                RoundedRectangle(cornerRadius: 9)
-                                                    .foregroundColor(isButtonPressed ? Color(red: 0.35, green: 0.02, blue: 0.32) : Color(red: 0.4, green: 0.03, blue: 0.37))
-                                                    .blur(radius: 0.5)
-                                                    .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
-                                                
-                                                Text("REGISTRIEREN")
-                                                    .font(.headline)
-                                                    .foregroundColor(.white)
-                                            }
-                                        )
-                                }
-                                .disabled(email.isEmpty || password.isEmpty)
-                                .sheet(isPresented: $isShowingAlertBanner) {
-                                    AlertBanner() // Hier kommt deine AlertBanner-View
-                                }
-                                .onChange(of: isButtonPressed) { newValue in
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        isButtonPressed = false // Setze den Zustand des Buttons zurück
-                                    }
-                                }
-                
+                    isButtonPressed = true
+                    authService.signUp(email: email, password: password)
+                    isShowingAlertBanner.toggle()
+                }) {
+                    Text("REGISTER")
+                        .font(Font.custom("Sedgwick Ave Display", size: 18))
+                        .kerning(0.25)                         .foregroundColor(.white)
+                        .padding(.horizontal, 70)
+                        .padding(.vertical, 16)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25) // Änderung des Hintergrunds
+                                .foregroundColor(isButtonPressed ? Color(red: 0.35, green: 0.02, blue: 0.32) : Color(red: 0.4, green: 0.03, blue: 0.37))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 25)
+                                        .stroke(Color.white, lineWidth: 1) // Weißer Rand
+                                )
+                        )
+                }
+                .disabled(email.isEmpty || password.isEmpty)
+                .sheet(isPresented: $isShowingAlertBanner) {
+                    AlertBanner() // Hier kommt deine AlertBanner-View
+                }
+                .onChange(of: isButtonPressed) { newValue in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        isButtonPressed = false // Setze den Zustand des Buttons zurück
+                    }
+                }
+
                 Button(action: {
-                                    isButtonPressed = true
-                                    authService.signIn(email: email, password: password)
-                                }) {
-                                    Text("ANMELDEN")
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                        .padding(.horizontal, 77)
-                                        .padding(.vertical, 16)
-                                        .background(
-                                            ZStack {
-                                                RoundedRectangle(cornerRadius: 9)
-                                                    .foregroundColor(isButtonPressed ? Color(red: 0.35, green: 0.02, blue: 0.32) : Color(red: 0.4, green: 0.03, blue: 0.37))
-                                                    .blur(radius: 0.5)
-                                                    .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
-                                                
-                                                Text("ANMELDEN")
-                                                    .font(.headline)
-                                                    .foregroundColor(.white)
-                                            }
-                                        )
-                                }
+                    isButtonPressed = true
+                    authService.signIn(email: email, password: password)
+                }) {
+                    Text("SIGN IN")
+                        .font(Font.custom("Sedgwick Ave Display", size: 18))
+                        .kerning(0.25)                        .foregroundColor(.white)
+                        .padding(.horizontal, 80)
+                        .padding(.vertical, 16)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25) // Änderung des Hintergrunds
+                                .foregroundColor(isButtonPressed ? Color(red: 0.35, green: 0.02, blue: 0.32) : Color(red: 0.4, green: 0.03, blue: 0.37))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 25)
+                                        .stroke(Color.white, lineWidth: 1) // Weißer Rand
+                                )
+                        )
+                }
+
                                 .disabled(email.isEmpty || password.isEmpty)
                                 .sheet(isPresented: $isShowingAlertBanner) {
                                     AlertBanner() // Hier kommt deine AlertBanner-View

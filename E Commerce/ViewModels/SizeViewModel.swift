@@ -1,18 +1,14 @@
 import Foundation
 
-struct Size: Identifiable, Equatable {
-    let id = UUID()
-    let name: String // Ändere "size" zu "name"
-}
-
 class SizeViewModel: ObservableObject {
-    @Published var sizes: [Size] = []
-    @Published var selectedSize: Size?
+    @Published var sizes: [Size] = [] // Eine Liste der verfügbaren Größen
+    @Published var selectedSize: Size? // Die ausgewählte Größe
 
     init() {
-        loadSizes()
+        loadSizes() // Beim Initialisieren Größen laden
     }
 
+    // Laden der verfügbaren Größen (Beispielwerte)
     func loadSizes() {
         sizes = [
             Size(name: "XS"),
@@ -26,5 +22,3 @@ class SizeViewModel: ObservableObject {
     
     // ...
 }
-
- 

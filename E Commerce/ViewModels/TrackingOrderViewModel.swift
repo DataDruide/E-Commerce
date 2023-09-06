@@ -1,29 +1,29 @@
-
 import Foundation
+
 @MainActor
 class TrackingOrderViewModel: ObservableObject {
-    // Store the list of orders
+    // Speichern der Liste von Bestellungen
     @Published var orders: [Order]
     
     init() {
-        // Initialize orders with sample data
+        // Initialisiere die Liste der Bestellungen mit Beispieldaten
         self.orders = [
-            Order(id: 1, text: "Order 1 has been packaged", isPackaged: false),
-            Order(id: 2, text: "Order on its way to the warehouse", isPackaged: false),
-            Order(id: 3, text: "Order has arrived at the warehouse", isPackaged: false),
-            Order(id: 4, text: "Order is out for delivery", isPackaged: false),
-            Order(id: 5, text: "Order has been delivered", isPackaged: false)
+            Order(id: 1, text: "Bestellung 1 wurde verpackt", isPackaged: false),
+            Order(id: 2, text: "Bestellung ist auf dem Weg zum Lager", isPackaged: false),
+            Order(id: 3, text: "Bestellung ist im Lager angekommen", isPackaged: false),
+            Order(id: 4, text: "Bestellung befindet sich auf dem Weg zur Auslieferung", isPackaged: false),
+            Order(id: 5, text: "Bestellung wurde zugestellt", isPackaged: false)
         ]
     }
     
-    // Toggle the checkbox status for the order at a specific index
+    // Ändern des Checkbox-Status für die Bestellung an einem bestimmten Index
     func checkCheckBox(for index: Int) {
         orders[index].isPackaged.toggle()
     }
     
-    // Save the updated checkbox statuses
+    // Speichern der aktualisierten Checkbox-Status
     func saveCheckboxes() {
-        // Implement saving logic here
-        // For example, you can update a database or server with the updated checkbox statuses
+        // Hier sollte die Speicherlogik implementiert werden
+        // Zum Beispiel können Sie eine Datenbank oder einen Server mit den aktualisierten Checkbox-Status aktualisieren
     }
 }
